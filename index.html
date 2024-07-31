@@ -18,28 +18,63 @@
             background-image: url('background.jpg'); /* Add your background image here */
             background-size: cover;
         }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: #fff;
+            border: 2px solid #d6336c;
             border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
+        }
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transform-origin: top;
+            animation: openFlap 2s forwards;
+        }
+        .letter {
+            opacity: 0;
+            transition: opacity 2s;
+            padding: 20px;
             text-align: center;
         }
-        h1 {
+        .letter h1 {
             color: #d6336c;
         }
-        p {
+        .letter p {
             font-size: 1.2em;
+        }
+        @keyframes openFlap {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(-180deg); }
+        }
+        .envelope.open .letter {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>To My Love</h1>
-        <p>Dear [Girlfriend's Name],</p>
-        <p>Your love letter goes here...</p>
-        <p>Love, [Your Name]</p>
+    <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+            <h1>To My Love</h1>
+            <p>Dear [Girlfriend's Name],</p>
+            <p>Your love letter goes here...</p>
+            <p>Love, [Your Name]</p>
+        </div>
     </div>
+
+    <script>
+        // Add a class to the envelope to trigger the animation
+        window.onload = function() {
+            document.querySelector('.envelope').classList.add('open');
+        };
+    </script>
 </body>
 </html>
