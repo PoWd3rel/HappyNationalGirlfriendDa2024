@@ -33,12 +33,34 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
             cursor: pointer;
+            background-color: #fff;
         }
         .picture img {
             display: none;
             width: 100%;
             height: auto;
+        }
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .heart-button {
+            background-color: #d6336c;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
         }
         .back-button {
             margin-top: 20px;
@@ -66,30 +88,83 @@
             grid-column: 1 / -1;
             margin: 10px 0; /* Reduced margin */
         }
+        .reveal-animation {
+            animation: reveal 1s forwards;
+        }
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="picture" onclick="showImage(this)"><img src="photo1.jpg" alt="Picture 1"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo2.jpg" alt="Picture 2"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo3.jpg" alt="Picture 3"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo4.jpg" alt="Picture 4"></div>
-        <div class="title">HAPPY NATIONAL GIRLFRIEND DAY <3</div>
-        <div class="picture" onclick="showImage(this)"><img src="photo5.jpg" alt="Picture 5"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo6.jpg" alt="Picture 6"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo7.jpg" alt="Picture 7"></div>
-        <div class="picture" onclick="showImage(this)"><img src="photo8.jpg" alt="Picture 8"></div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo1.jpg" alt="Picture 1">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo2.jpg" alt="Picture 2">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo3.jpg" alt="Picture 3">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo4.jpg" alt="Picture 4">
+        </div>
+        <div class="title">HAPPY NATIONAL GIRLFRIEND DAY</div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo5.jpg" alt="Picture 5">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo6.jpg" alt="Picture 6">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo7.jpg" alt="Picture 7">
+        </div>
+        <div class="picture" onclick="showImage(this)">
+            <div class="placeholder">
+                <button class="heart-button">&#x2764;</button>
+            </div>
+            <img src="photo8.jpg" alt="Picture 8">
+        </div>
     </div>
     <a class="back-button" href="index.html">Back to Letter</a>
     <script>
         function showImage(element) {
             const img = element.querySelector('img');
-            if (img.style.display === 'none' || img.style.display === '') {
-                img.style.display = 'block';
-            } else {
-                img.style.display = 'none';
-            }
+            const placeholder = element.querySelector('.placeholder');
+            img.classList.add('reveal-animation');
+            img.style.display = 'block';
+            placeholder.style.display = 'none';
         }
     </script>
 </body>
 </html>
+
