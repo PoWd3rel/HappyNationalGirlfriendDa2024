@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Pictures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            margin: 10px;
+            border: 2px solid #d6336c;
+            border-radius: 10px;
+            width: 300px;
+            height: auto;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d6336c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #b02d5e;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Pictures</h1>
+    <div class="gallery">
+        <img src="picture1.jpg" alt="Picture 1">
+        <img src="picture2.jpg" alt="Picture 2">
+        <img src="picture3.jpg" alt="Picture 3">
+        <!-- Add more images as needed -->
+    </div>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Love Letter</button>
+</body>
+</html>
+
