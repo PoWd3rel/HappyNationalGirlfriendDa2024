@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.jpg'); /* Add your background image here */
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #d6336c;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To My Love</h1>
+        <p>Dear [Girlfriend's Name],</p>
+        <p>Your love letter goes here...</p>
+        <p>Love, [Your Name]</p>
+    </div>
+</body>
+</html>
