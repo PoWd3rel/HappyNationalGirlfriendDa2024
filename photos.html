@@ -33,9 +33,10 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
         .picture img {
-            display: block;
+            display: none;
             width: 100%;
             height: auto;
         }
@@ -69,18 +70,26 @@
 </head>
 <body>
     <div class="container">
-        <div class="picture"><img src="photo1.jpg" alt="Picture 1"></div>
-        <div class="picture"><img src="photo2.jpg" alt="Picture 2"></div>
-        <div class="picture"><img src="photo3.jpg" alt="Picture 3"></div>
-        <div class="picture"><img src="photo4.jpg" alt="Picture 4"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo1.jpg" alt="Picture 1"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo2.jpg" alt="Picture 2"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo3.jpg" alt="Picture 3"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo4.jpg" alt="Picture 4"></div>
         <div class="title">HAPPY NATIONAL GIRLFRIEND DAY <3</div>
-        <div class="picture"><img src="photo5.jpg" alt="Picture 5"></div>
-        <div class="picture"><img src="photo6.jpg" alt="Picture 6"></div>
-        <div class="picture"><img src="photo7.jpg" alt="Picture 7"></div>
-        <div class="picture"><img src="photo8.jpg" alt="Picture 8"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo5.jpg" alt="Picture 5"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo6.jpg" alt="Picture 6"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo7.jpg" alt="Picture 7"></div>
+        <div class="picture" onclick="showImage(this)"><img src="photo8.jpg" alt="Picture 8"></div>
     </div>
     <a class="back-button" href="index.html">Back to Letter</a>
+    <script>
+        function showImage(element) {
+            const img = element.querySelector('img');
+            if (img.style.display === 'none' || img.style.display === '') {
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
-
-
